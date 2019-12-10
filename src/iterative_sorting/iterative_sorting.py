@@ -1,38 +1,48 @@
 # TO-DO: Complete the selection_sort() function below 
-def selection_sort( arr ):
-    # loop through n-1 elements
-    for i in range(0, len(arr)-1):
-        cur_index = i
-        # smallest_index = cur_index
-        # # TO-DO: find next smallest element
-        # # (hint, can do in 3 loc) 
-        smallest_index = arr.index(min(arr[cur_index+1:]))     
+# def selection_sort( arr ):
+#     # loop through n-1 elements
+#     for i in range(0, len(arr)-1):
+#         cur_index = i
+#         # smallest_index = cur_index
+#         # # TO-DO: find next smallest element
+#         # # (hint, can do in 3 loc) 
+#         smallest_index = arr.index(min(arr[cur_index+1:]))     
 
 
 
-        # TO-DO: swap
-        if arr[cur_index]< arr[smallest_index]:
-            pass
-        else:
-            arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
+#         # TO-DO: swap
+#         if arr[cur_index]< arr[smallest_index]:
+#             pass
+#         else:
+#             arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
             
         
-    return arr
+#     return arr
 
-    #https://www.geeksforgeeks.org/selection-sort/
-    # # Traverse through all array elements 
-    # for i in range(len(A)): 
-      
-    # # Find the minimum element in remaining  
-    # # unsorted array 
-    #     min_idx = i 
-    #     for j in range(i+1, len(A)): 
-    #         if A[min_idx] > A[j]: 
-    #             min_idx = j 
-              
-    # # Swap the found minimum element with  
-    # # the first element         
-    # A[i], A[min_idx] = A[min_idx], A[i] 
+def selection_sort( arr ):
+    c=1
+    while True:
+        c=0
+        # loop through n-1 elements
+        for i in range(0, len(arr) - 1):
+            cur_index = i
+            smallest_index = cur_index
+        
+            # TO-DO: find next smallest element
+            # (hint, can do in 3 loc) 
+            for j in range(i+1, len(arr)):
+                if arr[cur_index] > arr[j]:
+                    smallest_index = j
+                    c+=1     
+
+            # TO-DO: swap
+            arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
+    
+    
+        if c ==0:
+            break
+
+    return arr
 
 
 
